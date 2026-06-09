@@ -1,1 +1,457 @@
-<!DOCTYPE html> <html lang="ja"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>みんあそくん / Min-Aso-Kun - 多世代交流プラットフォーム</title> <script src="https://cdn.tailwindcss.com"></script> <link rel="preconnect" href="https://fonts.googleapis.com"> <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet"> <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> <style> :root { --primary: #e8602c; --on-primary: #ffffff; --surface: #f8f9ff; --on-surface: #1a1c1e; --surface-container: #eff4ff; --secondary: #4c5ecb; } body { font-family: 'Atkinson Hyperlegible Next', sans-serif; background-color: var(--surface); color: var(--on-surface); overflow-x: hidden; } .neobrutalism-card { background: white; border: 3px solid var(--on-surface); box-shadow: 6px 6px 0px 0px var(--on-surface); transition: all 0.15s ease; } .neobrutalism-card:hover { transform: translate(-2px, -2px); box-shadow: 8px 8px 0px 0px var(--on-surface); } .neobrutalism-card:active { transform: translate(3px, 3px); box-shadow: 3px 3px 0px 0px var(--on-surface); } .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; } .reveal.active { opacity: 1; transform: translateY(0); } .confetti { position: absolute; pointer-events: none; z-index: 10; } @keyframes fall { to { transform: translateY(100vh) rotate(720deg); } } .floating-icon { position: absolute; opacity: 0.1; pointer-events: none; z-index: 0; animation: float 6s ease-in-out infinite; } @keyframes float { 0%, 100% { transform: translateY(0) rotate(0deg); } 50% { transform: translateY(-20px) rotate(10deg); } } @media (max-width: 768px) { .mobile-bottom-nav { display: flex; } .desktop-nav { display: none; } } </style> </head> <body class="pt-20 pb-24 md:pb-0"> <!-- Desktop Navigation --> <nav class="fixed top-0 left-0 w-full z-50 bg-white border-b-3 border-on-surface px-8 py-4 hidden md:flex justify-between items-center shadow-[0_4px_0_0_rgba(0,0,0,1)]"> <div class="flex items-center gap-3"> <span class="material-icons text-primary text-3xl">festival</span> <div class="flex items-baseline gap-2"> <span class="font-black text-xl">みんあそくん</span> <span class="font-bold text-lg text-primary">/ Min-Aso-Kun</span> </div> </div> <div class="flex items-center gap-8 font-bold text-sm"> <a href="#how" class="hover:text-primary transition-colors">使い方 / How it works</a> <a href="#why" class="hover:text-primary transition-colors">魅力 / Why us</a> <div class="flex items-center gap-4 ml-4"> <span class="material-icons cursor-pointer">search</span> <a href="https://kenken6291.github.io/wild-at-60s/" class="neobrutalism-card bg-primary text-white px-6 py-2">Open App</a> </div> </div> </nav> <!-- Mobile Bottom Navigation --> <nav class="fixed bottom-0 left-0 w-full z-50 bg-white border-t-3 border-on-surface px-4 py-2 flex md:hidden justify-around items-center shadow-[0_-4px_0_0_rgba(0,0,0,1)]"> <a href="https://kenken6291.github.io/wild-at-60s/" class="flex flex-col items-center text-primary"> <span class="material-icons">home</span> <span class="text-[10px] font-bold">ホーム / Home</span> </a> <a href="https://kenken6291.github.io/wild-at-60s/" class="flex flex-col items-center"> <span class="material-icons">sports_esports</span> <span class="text-[10px] font-bold">あそぶ / Play</span> </a> <a href="https://kenken6291.github.io/wild-at-60s/" class="flex flex-col items-center"> <span class="material-icons">groups</span> <span class="text-[10px] font-bold">参加 / Join</span> </a> <a href="https://kenken6291.github.io/wild-at-60s/" class="flex flex-col items-center"> <span class="material-icons">person</span> <span class="text-[10px] font-bold">自分 / Me</span> </a> </nav> <!-- Hero Section --> <section class="relative min-h-[90vh] flex items-center px-6 md:px-20 overflow-hidden bg-surface-container"> <div class="absolute inset-0 z-0"> <img src="https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?q=80&w=2000" alt="Japanese Intergenerational Community" class="w-full h-full object-cover opacity-30 md:opacity-100"> <div class="absolute inset-0 bg-gradient-to-r from-white via-white/80 md:via-white/60 to-transparent"></div> </div> <span class="material-icons floating-icon text-primary text-6xl top-20 left-10" style="animation-delay: 0s;">auto_awesome</span> <span class="material-icons floating-icon text-secondary text-5xl bottom-40 right-20" style="animation-delay: 1s;">favorite</span> <span class="material-icons floating-icon text-primary text-4xl top-1/2 right-10" style="animation-delay: 2s;">music_note</span> <div class="relative z-10 max-w-3xl space-y-8 reveal active"> <div class="inline-block bg-secondary text-white px-6 py-2 rounded-full border-3 border-on-surface shadow-[4px_4px_0_0_rgba(0,0,0,1)] font-bold"> コミュニティの輪 / Community Spirit </div> <h1 class="text-4xl md:text-6xl font-black leading-tight tracking-tighter"> みんなのあそび仲間：<br> 世代を超えて、楽しみを。<br> <span class="text-primary block mt-2 text-3xl md:text-5xl">/ Everyone's Playmate: Creating joy across generations.</span> </h1> <p class="text-lg md:text-2xl font-bold max-w-2xl"> 「あそぼー！」をカタチに。多世代が趣味や遊びでつながるコミュニティ。<br> <span class="text-on-surface/70 text-base md:text-xl block mt-2">/ Turn "Let's play!" into reality. A community for all ages to connect through hobbies and fun.</span> </p> <div class="flex flex-col md:flex-row gap-6"> <a href="https://kenken6291.github.io/wild-at-60s/" class="neobrutalism-card bg-primary text-white px-10 py-5 font-black text-xl text-center"> あそびを始める / Start Playing </a> <a href="#how" class="neobrutalism-card bg-white text-primary px-10 py-5 font-black text-xl text-center"> 使い方を見る / How It Works </a> </div> </div> </section> <!-- How It Works --> <section id="how" class="py-20 px-6 md:px-20 space-y-16 bg-white"> <div class="text-center space-y-4 reveal"> <h2 class="text-3xl md:text-5xl font-black italic uppercase">使い方 / HOW IT WORKS</h2> <p class="text-lg md:text-xl font-bold opacity-70">つながるための3つのステップ / Three simple steps to spark a connection</p> </div> <div class="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-7xl mx-auto"> <div class="neobrutalism-card p-8 bg-[#4fc3f7] space-y-6 reveal" style="transition-delay: 0.1s;"> <div class="bg-white w-16 h-16 rounded-2xl border-3 border-on-surface flex items-center justify-center"> <span class="material-icons text-primary text-3xl font-bold">lightbulb</span> </div> <div class="space-y-4"> <h3 class="font-black text-2xl">やってみたいを投稿 / Post an idea</h3> <p class="text-lg font-bold">誰でもOK！あなたの「好き」を共有しましょう。<br><span class="opacity-80 text-base">/ Anyone can start! Share what you love doing.</span></p> </div> </div> <div class="neobrutalism-card p-8 bg-[#7986cb] text-white space-y-6 reveal" style="transition-delay: 0.2s;"> <div class="bg-white w-16 h-16 rounded-2xl border-3 border-on-surface flex items-center justify-center"> <span class="material-icons text-[#7986cb] text-3xl font-bold">groups</span> </div> <div class="space-y-4"> <h3 class="font-black text-2xl">仲間を集める / Gather a team</h3> <p class="text-lg font-bold">近所の多世代な仲間とつながりましょう。<br><span class="opacity-80 text-base">/ Connect with like-minded neighbors of all ages.</span></p> </div> </div> <div class="neobrutalism-card p-8 bg-[#e8602c] text-white space-y-6 reveal" style="transition-delay: 0.3s;"> <div class="bg-white w-16 h-16 rounded-2xl border-3 border-on-surface flex items-center justify-center"> <span class="material-icons text-primary text-3xl font-bold">celebration</span> </div> <div class="space-y-4"> <h3 class="font-black text-2xl">イベントを開催 / Host the event</h3> <p class="text-lg font-bold">喜びは分かち合うもの。思い出を作ろう！<br><span class="opacity-80 text-base">/ Joy is better when shared. Make memories together!</span></p> </div> </div> </div> </section> <!-- Why Us --> <section id="why" class="py-20 px-6 md:px-20 max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center"> <div class="relative reveal"> <div class="neobrutalism-card overflow-hidden"> <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?q=80&w=2000" alt="Joyful Interaction" class="w-full aspect-[4/3] object-cover"> </div> <div class="absolute -bottom-6 -right-6 neobrutalism-card bg-secondary text-white p-6 hidden md:block"> <p class="font-black text-3xl">300+ Members</p> <p class="font-bold">つながりの輪 / Social Circle</p> </div> </div> <div class="space-y-10"> <div class="space-y-4 reveal"> <h2 class="text-3xl md:text-4xl font-black">みんあそくんの魅力 / Why Min-Aso-Kun?</h2> <p class="text-lg md:text-xl font-bold text-on-surface/60">世代をつなぐ架け橋 / The bridge between ages</p> </div> <div class="space-y-6"> <div class="neobrutalism-card p-6 flex gap-4 items-start reveal" style="transition-delay: 0.1s;"> <span class="material-icons text-primary text-3xl">favorite_border</span> <div> <h3 class="font-black text-xl">孤独を防ぐ / Loneliness prevention</h3> <p class="text-on-surface/80">年齢に関わらず社会と繋がり、活動的に。<br><span class="text-sm">/ Connect with society regardless of age. Stay engaged and active.</span></p> </div> </div> <div class="neobrutalism-card p-6 flex gap-4 items-start reveal" style="transition-delay: 0.2s;"> <span class="material-icons text-primary text-3xl">handshake</span> <div> <h3 class="font-black text-xl">新しい仲間との出会い / Making new friends</h3> <p class="text-on-surface/80">いつもの輪を飛び出し、多様な世代と交流。<br><span class="text-sm">/ Meet people outside your usual circle. Kids learn wisdom, elders gain energy.</span></p> </div> </div> <div class="neobrutalism-card p-6 flex gap-4 items-start reveal" style="transition-delay: 0.3s;"> <span class="material-icons text-primary text-3xl">auto_awesome</span> <div> <h3 class="font-black text-xl">趣味の充実 / Fulfilling hobbies</h3> <p class="text-on-surface/80">昔の情熱を再発見したり、新しい興味を見つけたり。<br><span class="text-sm">/ Rediscover old passions or find new ones with fellow enthusiasts.</span></p> </div> </div> </div> </div> </section> <!-- CTA Area --> <section class="py-20 px-6"> <div class="neobrutalism-card bg-[#006080] text-white p-8 md:p-20 text-center space-y-10 max-w-5xl mx-auto reveal"> <h2 class="text-3xl md:text-6xl font-black leading-tight"> 今日からあそびの輪に加わろう！ /<br> Join the circle of play today! </h2> <p class="text-lg md:text-2xl font-bold opacity-90"> あなたのアイデアを待っている仲間がいます。一緒に実現しましょう。<br> / Your community is waiting for your next big idea. Let's make it happen together. </p> <div class="flex flex-col md:flex-row gap-6 justify-center"> <a href="https://kenken6291.github.io/wild-at-60s/" class="neobrutalism-card bg-white text-on-surface px-12 py-6 font-black text-2xl text-center"> 無料で始める / Get Started Free </a> </div> </div> </section> <!-- Footer --> <footer class="bg-secondary text-white py-16 px-6 md:px-20 border-t-4 border-on-surface"> <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12"> <div class="space-y-6"> <div class="flex items-center gap-3"> <span class="material-icons text-4xl">festival</span> <span class="text-3xl font-black italic">みんあそくん</span> </div> <p class="font-bold opacity-80"> みんなであそぼー！がすぐ形になる、<br> 多世代交流イベント企画ツール。 </p> </div> <div class="grid grid-cols-2 gap-8"> <div class="space-y-4"> <h4 class="font-black text-lg">Menu</h4> <ul class="space-y-2 font-bold opacity-70"> <li><a href="https://kenken6291.github.io/wild-at-60s/" class="hover:underline">Home</a></li> <li><a href="https://kenken6291.github.io/wild-at-60s/" class="hover:underline">Play</a></li> <li><a href="https://kenken6291.github.io/wild-at-60s/" class="hover:underline">Join</a></li> </ul> </div> <div class="space-y-4"> <h4 class="font-black text-lg">Support</h4> <ul class="space-y-2 font-bold opacity-70"> <li><a href="https://kenken6291.github.io/wild-at-60s/" class="hover:underline">Safety</a></li> <li><a href="https://kenken6291.github.io/wild-at-60s/" class="hover:underline">Contact</a></li> <li><a href="https://kenken6291.github.io/wild-at-60s/" class="hover:underline">Story</a></li> </ul> </div> </div> <div class="space-y-6"> <h4 class="font-black text-lg">Follow Us</h4> <div class="flex gap-4"> <div class="w-12 h-12 rounded-xl bg-white/20 flex items-center justify-center cursor-pointer hover:bg-white hover:text-secondary transition-all"> <span class="material-icons text-2xl">share</span> </div> <div class="w-12 h-12 rounded-xl bg-white/20 flex items-center justify-center cursor-pointer hover:bg-white hover:text-secondary transition-all"> <span class="material-icons text-2xl">chat</span> </div> </div> <p class="text-sm font-bold opacity-60"> © 2024 みんあそくんコミュニティ / Min-Aso-Kun Community.<br> All Generations Welcome. </p> </div> </div> </footer> <!-- Scripts --> <script> // Scroll Reveal Animation function reveal() { var reveals = document.querySelectorAll(".reveal"); for (var i = 0; i < reveals.length; i++) { var windowHeight = window.innerHeight; var elementTop = reveals[i].getBoundingClientRect().top; var elementVisible = 150; if (elementTop < windowHeight - elementVisible) { reveals[i].classList.add("active"); } } } window.addEventListener("scroll", reveal); // Confetti Particle Effect function createConfetti() { const colors = ['#e8602c', '#4fc3f7', '#7986cb', '#ffca28']; for (let i = 0; i < 20; i++) { const confetti = document.createElement('div'); confetti.className = 'confetti'; confetti.style.width = Math.random() * 12 + 6 + 'px'; confetti.style.height = confetti.style.width; confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)]; confetti.style.left = Math.random() * 100 + 'vw'; confetti.style.top = '-20px'; confetti.style.borderRadius = '3px'; confetti.style.animation = `fall ${Math.random() * 4 + 3}s linear forwards`; document.body.appendChild(confetti); setTimeout(() => confetti.remove(), 7000); } } setInterval(createConfetti, 5000); window.onload = () => { createConfetti(); reveal(); }; </script> </body> </html>
+<!DOCTYPE html>
+
+<html class="light" lang="ja"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Min-Aso-Kun (みんあそくん) | Intergenerational Community Platform</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:wght@400;700;800&amp;family=Plus+Jakarta+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-variant": "#d9e3f6",
+                    "on-surface": "#121c2a",
+                    "tertiary-fixed": "#e0e0ff",
+                    "on-tertiary-fixed": "#000767",
+                    "secondary-container": "#40c2fd",
+                    "on-tertiary-fixed-variant": "#2f3aa3",
+                    "on-tertiary": "#ffffff",
+                    "secondary-fixed-dim": "#7bd0ff",
+                    "on-secondary-fixed-variant": "#004c69",
+                    "surface": "#f8f9ff",
+                    "surface-tint": "#aa3600",
+                    "surface-container-lowest": "#ffffff",
+                    "primary-fixed": "#ffdbcf",
+                    "primary": "#a63500",
+                    "sunset-orange": "#e8602c", // Brand specific from prompt
+                    "surface-dim": "#d0dbed",
+                    "on-secondary-fixed": "#001e2c",
+                    "primary-container": "#ca4b17",
+                    "error": "#ba1a1a",
+                    "tertiary-container": "#606ad4",
+                    "inverse-primary": "#ffb59c",
+                    "secondary": "#00668a",
+                    "on-primary": "#ffffff",
+                    "secondary-fixed": "#c4e7ff",
+                    "primary-fixed-dim": "#ffb59c",
+                    "surface-container-low": "#eff4ff",
+                    "background": "#f8f9ff",
+                    "surface-container-highest": "#d9e3f6",
+                    "tertiary": "#4651b9",
+                    "outline-variant": "#e1bfb5",
+                    "on-error-container": "#93000a",
+                    "outline": "#8d7168",
+                    "on-tertiary-container": "#fffbff",
+                    "inverse-surface": "#27313f",
+                    "on-primary-container": "#fffbff",
+                    "surface-container-high": "#dee9fc",
+                    "surface-bright": "#f8f9ff",
+                    "on-background": "#121c2a",
+                    "error-container": "#ffdad6",
+                    "on-primary-fixed-variant": "#822700",
+                    "on-primary-fixed": "#390c00",
+                    "surface-container": "#e6eeff",
+                    "tertiary-fixed-dim": "#bdc2ff",
+                    "on-surface-variant": "#59413a",
+                    "on-secondary-container": "#004d6a",
+                    "inverse-on-surface": "#eaf1ff",
+                    "on-secondary": "#ffffff",
+                    "on-error": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "sm": "12px",
+                    "container-max": "1280px",
+                    "base": "8px",
+                    "lg": "48px",
+                    "xl": "80px",
+                    "gutter": "24px",
+                    "xs": "4px",
+                    "md": "24px",
+                    "container-padding-mobile": "16px",
+                    "container-padding-desktop": "48px",
+                    "stack-md": "48px"
+            },
+            "fontFamily": {
+                    "headline-md-mobile": ["Atkinson Hyperlegible Next"],
+                    "display-lg-mobile": ["Atkinson Hyperlegible Next"],
+                    "body-md": ["Plus Jakarta Sans"],
+                    "display-lg": ["Atkinson Hyperlegible Next"],
+                    "headline-md": ["Atkinson Hyperlegible Next"],
+                    "caption": ["Plus Jakarta Sans"],
+                    "body-lg": ["Plus Jakarta Sans"],
+                    "label-bold": ["Plus Jakarta Sans"],
+                    "headline-lg": ["Atkinson Hyperlegible Next"]
+            },
+            "fontSize": {
+                    "headline-md-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                    "display-lg-mobile": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.01em", "fontWeight": "800"}],
+                    "body-md": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "display-lg": ["56px", {"lineHeight": "64px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                    "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+                    "headline-lg": ["48px", {"lineHeight": "56px", "fontWeight": "800"}],
+                    "caption": ["14px", {"lineHeight": "20px", "fontWeight": "500"}],
+                    "body-lg": ["20px", {"lineHeight": "32px", "fontWeight": "400"}],
+                    "label-bold": ["16px", {"lineHeight": "24px", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                    "label-lg": ["18px", {"lineHeight": "28px", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .neo-shadow {
+            box-shadow: 8px 8px 0px 0px #121c2a;
+        }
+        .neo-shadow-sm {
+            box-shadow: 4px 4px 0px 0px #121c2a;
+        }
+        .neo-shadow-orange {
+            box-shadow: 6px 6px 0px 0px #e8602c;
+        }
+        .neo-shadow-blue {
+            box-shadow: 6px 6px 0px 0px #40c2fd;
+        }
+        .neo-button-hover:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: 10px 10px 0px 0px #121c2a;
+        }
+        .neo-button-hover:active {
+            transform: translate(2px, 2px);
+            box-shadow: 2px 2px 0px 0px #121c2a;
+        }
+        .confetti-container {
+            position: absolute;
+            inset: 0;
+            overflow: hidden;
+            pointer-events: none;
+        }
+        .confetti {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: #e8602c;
+            opacity: 0.7;
+        }
+    </style>
+</head>
+<body class="bg-surface font-body-md text-on-surface overflow-x-hidden">
+<!-- Top Navigation -->
+<nav class="bg-canvas-cream dark:bg-ink-charcoal flex justify-between items-center w-full px-container-padding-mobile md:px-container-padding-desktop max-w-7xl mx-auto h-[72px] sticky top-0 z-50">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-sunset-orange font-bold text-3xl" data-icon="festival">festival</span>
+<span class="font-headline-lg text-sunset-orange dark:text-primary-fixed-dim font-bold tracking-tight">Min-Aso-Kun</span>
+</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-on-surface-variant dark:text-surface-variant font-label-lg hover:text-sunset-orange transition-colors duration-200" href="#how-it-works">How It Works</a>
+<a class="text-on-surface-variant dark:text-surface-variant font-label-lg hover:text-sunset-orange transition-colors duration-200" href="#why-us">Why Us</a>
+<a class="bg-sunset-orange text-white px-6 py-2 border-2 border-on-background neo-shadow-sm font-label-bold active:scale-95 transition-transform" href="https://kenken6291.github.io/wild-at-60s/">Open App</a>
+</div>
+<button class="md:hidden text-on-surface">
+<span class="material-symbols-outlined text-3xl" data-icon="menu">menu</span>
+</button>
+</nav>
+<!-- Hero Section -->
+<header class="relative w-full min-h-[85vh] flex items-center overflow-hidden border-b-[3px] border-on-background">
+<div class="absolute inset-0 z-0">
+<img alt="Japanese intergenerational community" class="w-full h-full object-cover opacity-90" src="https://lh3.googleusercontent.com/aida/AP1WRLuqqCtJ6zCSFPx6run0zGnlQ-TQ8JtNdv3QuJqhcWeSjID6rOOTRmB6vp5m37qAHt63KPn1xB1OPlvU5q2OnbeHTKwschoniuHgWw7A7aVcL-aeYjw4GOvYxYHhZDiTEouynl3DW0SonHZBVhwk9keVSJKlPwglNTL3ggPwjzGtwPi2y4rGwm8rBkkNizxfatlbnG1V6-iU6lVW_AW7o8nyJWFXwT-C0sJ_zqvq_hfGHL2byDrQChIGkTmp"/>
+<div class="absolute inset-0 bg-gradient-to-r from-background/90 via-background/40 to-transparent"></div>
+</div>
+<div class="relative z-10 max-w-7xl mx-auto px-container-padding-mobile md:px-container-padding-desktop w-full py-xl">
+<div class="max-w-2xl">
+<div class="inline-block bg-secondary-container border-2 border-on-background px-4 py-1 mb-6 neo-shadow-sm">
+<span class="font-label-bold text-on-secondary-container">Community Play | 地域共遊</span>
+</div>
+<h1 class="font-display-lg text-display-lg-mobile md:text-display-lg leading-tight mb-4">
+<span class="text-sunset-orange">世代を超えて、</span><br/>
+<span class="block mt-2">遊びでつながる。</span>
+<span class="block mt-4 text-4xl md:text-5xl">Connecting Generations Through Joy.</span>
+</h1>
+<p class="font-body-lg text-body-lg mb-8 text-on-surface-variant max-w-xl">
+                    Min-Aso-Kun transforms local communities into vibrant playgrounds. Join neighbors of all ages to share skills, hobbies, and smiles. 
+                    <br/>「みんあそくん」は、地域を巨大な遊び場に変えるプラットフォームです。
+                </p>
+<div class="flex flex-col sm:flex-row gap-4">
+<a class="bg-sunset-orange text-white px-8 py-4 border-[3px] border-on-background neo-shadow neo-button-hover text-center font-label-bold text-lg" href="https://kenken6291.github.io/wild-at-60s/">
+                        Get Started | はじめる
+                    </a>
+<a class="bg-white text-on-surface px-8 py-4 border-[3px] border-on-background neo-shadow neo-button-hover text-center font-label-bold text-lg" href="#how-it-works">
+                        Learn More | もっと詳しく
+                    </a>
+</div>
+</div>
+</div>
+<div class="confetti-container" id="hero-confetti"></div>
+</header>
+<!-- How It Works Section -->
+<section class="py-xl max-w-7xl mx-auto px-container-padding-mobile md:px-container-padding-desktop" id="how-it-works">
+<div class="text-center mb-16">
+<h2 class="font-headline-lg text-headline-md-mobile md:text-headline-lg mb-4">How It Works | 遊び方</h2>
+<div class="h-1.5 w-32 bg-sunset-orange mx-auto border border-on-background"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Step 1 -->
+<div class="bg-white p-8 border-[3px] border-on-background neo-shadow-orange flex flex-col items-center text-center group hover:-translate-y-2 transition-transform duration-300">
+<div class="w-20 h-20 bg-secondary-container border-[3px] border-on-background rounded-full flex items-center justify-center mb-6 neo-shadow-sm">
+<span class="material-symbols-outlined text-4xl" data-icon="lightbulb">lightbulb</span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-2">1. Post an Idea</h3>
+<h4 class="font-label-bold text-on-surface-variant mb-4">アイデアを投稿する</h4>
+<p class="font-body-md">Share a hobby, craft, or game you want to play or teach. From origami to coding, every skill has a fan.</p>
+</div>
+<!-- Step 2 -->
+<div class="bg-white p-8 border-[3px] border-on-background neo-shadow-blue flex flex-col items-center text-center group hover:-translate-y-2 transition-transform duration-300">
+<div class="w-20 h-20 bg-tertiary-fixed border-[3px] border-on-background rounded-full flex items-center justify-center mb-6 neo-shadow-sm">
+<span class="material-symbols-outlined text-4xl" data-icon="group">group</span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-2">2. Gather a Team</h3>
+<h4 class="font-label-bold text-on-surface-variant mb-4">仲間を集める</h4>
+<p class="font-body-md">Local residents browse ideas and join. Our smart matching connects youngsters and seniors seamlessly.</p>
+</div>
+<!-- Step 3 -->
+<div class="bg-white p-8 border-[3px] border-on-background neo-shadow-orange flex flex-col items-center text-center group hover:-translate-y-2 transition-transform duration-300">
+<div class="w-20 h-20 bg-primary-fixed border-[3px] border-on-background rounded-full flex items-center justify-center mb-6 neo-shadow-sm">
+<span class="material-symbols-outlined text-4xl" data-icon="celebration">celebration</span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-2">3. Host the Event</h3>
+<h4 class="font-label-bold text-on-surface-variant mb-4">イベントを開催する</h4>
+<p class="font-body-md">Meet at a local community center or park. Enjoy the magic of shared experience and build lasting bonds.</p>
+</div>
+</div>
+</section>
+<!-- Why Us Section -->
+<section class="py-xl bg-surface-container border-y-[3px] border-on-background" id="why-us">
+<div class="max-w-7xl mx-auto px-container-padding-mobile md:px-container-padding-desktop">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+<div class="relative order-2 lg:order-1">
+<div class="border-[3px] border-on-background neo-shadow overflow-hidden bg-white">
+<img alt="Community connection" class="w-full h-[500px] object-cover" data-alt="A heartwarming scene of a diverse, intergenerational group of people laughing together in a sunny community park. A senior man and a young child are engaged in a board game while others chat in the background under a wooden gazebo. The lighting is warm and golden, reflecting a modern, joyful community atmosphere with high contrast and vibrant colors." src="https://lh3.googleusercontent.com/aida-public/AB6AXuACgXqpToppeLqslFlrb3TAW1zIddUipgi2DIDBn1AUIC9YDd5w3KOy1fQt56xd19AfrfwOgJDk_otDEWZLv5LkHAP6jz66zUq27Q5GkjfsJkydHlFlOqo2fwAd-3tCdXJ0qAhR0q1HWZaJNBEjuZcKyt5jdsN6J0oiyGdouJil4y0K2648dtklCk6TIbIB1TpKd6WY6gGN2jfqSsoLmiYVFeZbUM50MBbIGjH_gUUcQdAkqGdwc_SVWNoMQCen5FTo4a-eIxARCyd0"/>
+</div>
+<div class="absolute -bottom-6 -right-6 bg-secondary-container border-[3px] border-on-background px-6 py-4 neo-shadow-sm hidden md:block">
+<p class="font-headline-md text-on-secondary-container">#TogetherStronger</p>
+</div>
+</div>
+<div class="order-1 lg:order-2">
+<h2 class="font-headline-lg text-headline-md-mobile md:text-headline-lg mb-8">Why Min-Aso-Kun?<br/><span class="text-sunset-orange">なぜ「みんあそくん」？</span></h2>
+<ul class="space-y-8">
+<li class="flex gap-6 items-start">
+<div class="flex-shrink-0 w-12 h-12 bg-white border-2 border-on-background flex items-center justify-center neo-shadow-sm">
+<span class="material-symbols-outlined text-sunset-orange" data-icon="sentiment_very_satisfied">sentiment_very_satisfied</span>
+</div>
+<div>
+<h4 class="font-label-bold text-xl mb-1">Loneliness Prevention | 孤独の解消</h4>
+<p class="font-body-md">Creating daily reasons to step outside and connect with diverse neighbors.</p>
+</div>
+</li>
+<li class="flex gap-6 items-start">
+<div class="flex-shrink-0 w-12 h-12 bg-white border-2 border-on-background flex items-center justify-center neo-shadow-sm">
+<span class="material-symbols-outlined text-secondary" data-icon="handshake">handshake</span>
+</div>
+<div>
+<h4 class="font-label-bold text-xl mb-1">New Friendships | 新しい出会い</h4>
+<p class="font-body-md">Break the ice through play. Age is just a number when you're having fun.</p>
+</div>
+</li>
+<li class="flex gap-6 items-start">
+<div class="flex-shrink-0 w-12 h-12 bg-white border-2 border-on-background flex items-center justify-center neo-shadow-sm">
+<span class="material-symbols-outlined text-tertiary" data-icon="auto_awesome">auto_awesome</span>
+</div>
+<div>
+<h4 class="font-label-bold text-xl mb-1">Fulfilling Hobbies | 生きがいの発見</h4>
+<p class="font-body-md">Teach what you know, learn what you don't. A platform for life-long learning.</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<!-- Community Play Feed Preview (Bento Grid) -->
+<section class="py-xl max-w-7xl mx-auto px-container-padding-mobile md:px-container-padding-desktop">
+<div class="text-center mb-12">
+<h2 class="font-headline-lg mb-2">Upcoming Activities | 近日のアクティビティ</h2>
+<p class="font-body-lg text-on-surface-variant">Real events happening right now in your neighborhood.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 md:grid-rows-2 gap-6 h-auto md:h-[600px]">
+<!-- Card 1 -->
+<div class="md:col-span-2 md:row-span-2 bg-white border-[3px] border-on-background neo-shadow-orange p-6 flex flex-col justify-between overflow-hidden relative group">
+<div class="absolute top-4 right-4 z-10">
+<span class="bg-tertiary text-white px-4 py-1 border-2 border-on-background neo-shadow-sm font-label-bold">Workshop</span>
+</div>
+<div>
+<h3 class="font-headline-md text-3xl mb-2">Retro Game Tournament</h3>
+<p class="text-on-surface-variant font-label-bold mb-4">レトロゲーム大会</p>
+<p class="font-body-md mb-6">Seniors teach youngsters the classics of the 80s! Famicom, Board Games, and more.</p>
+</div>
+<div class="flex items-center justify-between mt-auto">
+<div class="flex -space-x-3">
+<div class="w-12 h-12 rounded-full border-2 border-on-background bg-secondary-container flex items-center justify-center font-bold">👴</div>
+<div class="w-12 h-12 rounded-full border-2 border-on-background bg-primary-fixed flex items-center justify-center font-bold">🧒</div>
+<div class="w-12 h-12 rounded-full border-2 border-on-background bg-tertiary-fixed flex items-center justify-center font-bold">+12</div>
+</div>
+<a class="bg-on-surface text-white px-6 py-2 border-2 border-on-background neo-shadow-sm font-label-bold hover:scale-105 transition-transform" href="https://kenken6291.github.io/wild-at-60s/">Join Group</a>
+</div>
+<img class="absolute bottom-0 right-0 w-1/3 opacity-10 grayscale group-hover:grayscale-0 transition-all duration-500 pointer-events-none" data-alt="A close-up action shot of colorful retro gaming controllers and vintage console parts scattered on a rustic wooden table. The lighting is moody with neon blue and pink highlights, creating a sense of nostalgia mixed with modern vibrancy. The style is bold and high-contrast, fitting the neobrutalist aesthetic of the platform." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDxV-Yy0rKqgVadRtuIXSSJPdn2i1fCjYzMNukWMlrJxAtxng8TkI0A57PHlyMR0PTKuD0cVEvZONHOYFHc3lLOzvOYVZKjuefZANOHafY-6DSW1fLZJXRlnz4gmpnwymHZMA47sBcqw-QYj2tf1xE7YU_MCBa2p31mvQ23tw4v0pxjzNeUfZ4or2IVfTs5LxA8pfX0s94miB2dFch9dUQ-YP39t8egt9hjn_USSIL10ul2T-EoRgYxdD2mvz1DUpPxigv9ojys-EPc"/>
+</div>
+<!-- Card 2 -->
+<div class="md:col-span-2 bg-secondary-container border-[3px] border-on-background neo-shadow-sm p-6 flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline-md text-2xl">Traditional Origami Class</h3>
+<span class="bg-white border-2 border-on-background px-2 py-0.5 text-sm font-bold">Arts</span>
+</div>
+<p class="font-label-bold text-on-secondary-container/80 mb-2">伝統の折り紙教室</p>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined" data-icon="location_on">location_on</span>
+<span class="font-label-bold">Shinjuku Central Park</span>
+<a class="ml-auto bg-white border-2 border-on-background px-4 py-1 neo-shadow-sm font-label-bold" href="https://kenken6291.github.io/wild-at-60s/">View</a>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-white border-[3px] border-on-background neo-shadow-sm p-6 flex flex-col justify-between">
+<h3 class="font-headline-md text-xl">Cooking Exchange</h3>
+<p class="text-sm font-label-bold text-on-surface-variant">料理交流会</p>
+<div class="mt-4 flex items-center justify-between">
+<span class="text-sunset-orange font-bold">Full</span>
+<span class="material-symbols-outlined" data-icon="lock">lock</span>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="bg-primary-fixed border-[3px] border-on-background neo-shadow-sm p-6 flex flex-col justify-between">
+<h3 class="font-headline-md text-xl">Morning Tai Chi</h3>
+<p class="text-sm font-label-bold text-on-surface-variant">朝の太極拳</p>
+<div class="mt-4 flex items-center justify-between">
+<span class="font-bold">8 Joined</span>
+<span class="material-symbols-outlined" data-icon="add_circle">add_circle</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Final CTA Section -->
+<section class="bg-sunset-orange border-y-[3px] border-on-background py-xl relative overflow-hidden">
+<div class="absolute inset-0 opacity-10">
+<div class="grid grid-cols-12 h-full w-full">
+<div class="border-r border-on-background"></div><div class="border-r border-on-background"></div><div class="border-r border-on-background"></div><div class="border-r border-on-background"></div><div class="border-r border-on-background"></div><div class="border-r border-on-background"></div><div class="border-r border-on-background"></div><div class="border-r border-on-background"></div><div class="border-r border-on-background"></div><div class="border-r border-on-background"></div><div class="border-r border-on-background"></div><div class="border-r border-on-background"></div>
+</div>
+</div>
+<div class="relative z-10 max-w-4xl mx-auto px-container-padding-mobile text-center">
+<h2 class="font-display-lg text-display-lg-mobile md:text-5xl text-white mb-6">Ready to play with your community?<br/>あなたの街を遊び場に。</h2>
+<p class="font-body-lg text-white/90 mb-10 text-xl">Join thousands of others making Japanese local communities warmer and more exciting through Min-Aso-Kun.</p>
+<div class="flex flex-col sm:flex-row justify-center gap-6">
+<a class="bg-white text-on-surface px-10 py-5 border-[3px] border-on-background neo-shadow neo-button-hover text-xl font-label-bold" href="https://kenken6291.github.io/wild-at-60s/">
+                    Join the App Now | アプリに参加する
+                </a>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-surface-container dark:bg-ink-charcoal border-t border-outline-variant dark:border-outline">
+<div class="flex flex-col md:flex-row justify-between items-start py-xl px-container-padding-mobile md:px-container-padding-desktop w-full max-w-7xl mx-auto gap-12">
+<div class="max-w-sm">
+<div class="flex items-center gap-2 mb-4">
+<span class="material-symbols-outlined text-sunset-orange font-bold text-3xl" data-icon="festival">festival</span>
+<span class="font-headline-md text-sunset-orange dark:text-primary-fixed-dim">Min-Aso-Kun</span>
+</div>
+<p class="font-body-md text-on-surface-variant mb-6">Bridging gaps and building futures through the power of intergenerational play. Every connection matters.</p>
+<div class="flex gap-4">
+<a class="w-10 h-10 bg-white border-2 border-on-background flex items-center justify-center neo-shadow-sm hover:translate-y-[-2px] transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="share">share</span>
+</a>
+<a class="w-10 h-10 bg-white border-2 border-on-background flex items-center justify-center neo-shadow-sm hover:translate-y-[-2px] transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="mail">mail</span>
+</a>
+</div>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-3 gap-12 w-full md:w-auto">
+<div>
+<h5 class="font-label-bold mb-4">Community</h5>
+<ul class="space-y-2 font-body-md text-on-surface-variant">
+<li><a class="hover:text-sunset-orange transition-colors" href="#">Browse Events</a></li>
+<li><a class="hover:text-sunset-orange transition-colors" href="#">Local Parks</a></li>
+<li><a class="hover:text-sunset-orange transition-colors" href="#">Volunteers</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-label-bold mb-4">Company</h5>
+<ul class="space-y-2 font-body-md text-on-surface-variant">
+<li><a class="hover:text-sunset-orange transition-colors" href="#">About Us</a></li>
+<li><a class="hover:text-sunset-orange transition-colors" href="#">Contact Support</a></li>
+<li><a class="hover:text-sunset-orange transition-colors" href="#">Newsroom</a></li>
+</ul>
+</div>
+<div class="col-span-2 md:col-span-1">
+<h5 class="font-label-bold mb-4">Legal</h5>
+<ul class="space-y-2 font-body-md text-on-surface-variant">
+<li><a class="hover:text-sunset-orange transition-colors" href="#">Terms of Service</a></li>
+<li><a class="hover:text-sunset-orange transition-colors" href="#">Privacy Policy</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="max-w-7xl mx-auto px-container-padding-mobile md:px-container-padding-desktop py-6 border-t border-outline-variant flex justify-between items-center flex-wrap gap-4">
+<span class="font-label-md text-on-surface-variant">© 2024 Min-Aso-Kun. Celebrating every connection.</span>
+<div class="flex gap-4">
+<span class="bg-on-surface text-white px-3 py-1 text-xs font-bold uppercase tracking-widest">Japan Made</span>
+</div>
+</div>
+</footer>
+<script>
+        // Micro-interaction: Paper Confetti animation for Hero
+        function createConfetti() {
+            const container = document.getElementById('hero-confetti');
+            const colors = ['#e8602c', '#40c2fd', '#a63500', '#4651b9'];
+            
+            for (let i = 0; i < 50; i++) {
+                const confetti = document.createElement('div');
+                confetti.className = 'confetti';
+                confetti.style.left = Math.random() * 100 + '%';
+                confetti.style.top = Math.random() * 100 + '%';
+                confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                confetti.style.transform = `rotate(${Math.random() * 360}deg)`;
+                confetti.style.width = (Math.random() * 8 + 4) + 'px';
+                confetti.style.height = confetti.style.width;
+                
+                container.appendChild(confetti);
+                
+                // Simple float animation
+                const duration = 10 + Math.random() * 20;
+                confetti.animate([
+                    { transform: `translate(0, 0) rotate(0deg)`, opacity: 0 },
+                    { transform: `translate(${Math.random() * 100 - 50}px, ${Math.random() * 100 - 50}px) rotate(${Math.random() * 360}deg)`, opacity: 0.7 },
+                    { transform: `translate(${Math.random() * 200 - 100}px, ${Math.random() * 200 - 100}px) rotate(${Math.random() * 720}deg)`, opacity: 0 }
+                ], {
+                    duration: duration * 1000,
+                    iterations: Infinity,
+                    direction: 'alternate',
+                    easing: 'ease-in-out'
+                });
+            }
+        }
+        
+        window.addEventListener('DOMContentLoaded', createConfetti);
+        
+        // Sticky Header effect
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 20) {
+                nav.classList.add('neo-shadow-sm', 'border-b-2', 'border-on-background');
+            } else {
+                nav.classList.remove('neo-shadow-sm', 'border-b-2', 'border-on-background');
+            }
+        });
+    </script>
+</body></html>
